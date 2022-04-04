@@ -287,5 +287,4 @@ bills.forEach((bill, index) => {
   tips.push(calcTip(bill));
   totals.push(bills[index] + tips[index]);
 });
-
 console.log(bills, tips, totals);
