@@ -271,21 +271,60 @@ HINT: Remember that an array needs a value in each position, and that value can 
 GOOD LUCK 😀
 */
 
-function calcTip(billValue) {
-  if (billValue >= 50 && billValue <= 300) {
-    return (billValue * 15) / 100;
-  } else {
-    return (billValue * 20) / 100;
-  }
-}  
+// function calcTip(billValue) {
+//   if (billValue >= 50 && billValue <= 300) {
+//     return (billValue * 15) / 100;
+//   } else {
+//     return (billValue * 20) / 100;
+//   }
+// }  
 
-const bills = [125, 525, 44];
-let tips = [];
-let totals = [];
+// const bills = [125, 525, 44];
+// let tips = [];
+// let totals = [];
 
-bills.forEach((bill, index) => {
-  tips.push(calcTip(bill));
-  totals.push(bills[index] + tips[index]);
-});
+// bills.forEach((bill, index) => {
+//   tips.push(calcTip(bill));
+//   totals.push(bills[index] + tips[index]);
+// });
 
-console.log(bills, tips, totals);
+// console.log(bills, tips, totals);
+
+
+
+////////////////////////////////////
+// Introduction to Objects
+const jonas = {
+  firstName: 'Jonas',
+  lastName: 'Schmedtmann',
+  age: 2037 - 1991,
+  job: 'teacher',
+  friends: ['Michael', 'Peter', 'Steven']
+};
+
+console.log(jonas);
+console.log(jonas.lastName);
+console.log(jonas['lastName']);
+
+const nameKey = 'Name';
+console.log(jonas['first' + nameKey]);
+console.log(jonas['last' + nameKey]);
+
+const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName, lastName, age, job, and friends');
+console.log(jonas[interestedIn]);
+
+if(jonas[interestedIn]) {
+  console.log(jonas[interestedIn]);
+} else {
+  console.log('Wrong request! Choose between firstName, lastName, age, job, and friends');
+}
+
+jonas.location = 'Portugal';
+jonas['twitter'] = '@jonasschedtman';
+
+console.log(jonas);
+
+
+// Challenge
+let challengeString = `${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`;
+console.log(challengeString);
