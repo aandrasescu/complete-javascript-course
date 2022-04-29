@@ -333,33 +333,33 @@ GOOD LUCK 😀
 
 ////////////////////////////////////
 // Object Methods
-const jonas = {
-  firstName: 'Jonas',
-  lastName: 'Schmedtmann',
-  birthYear: 1991,
-  job: 'teacher',
-  friends: ['Michael', 'Peter', 'Steven'],
-  hasDriversLicense: true,
-  // calcAge: function() {
-  //   return 2037 - this.birthYear;
-  // }
-  calcAge: function() {
-    this.age = 2037 - this.birthYear;
-    return this.age;
-  },
-  getSummary: function() {
-    return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license.`;
-  }
-};
+// const jonas = {
+//   firstName: 'Jonas',
+//   lastName: 'Schmedtmann',
+//   birthYear: 1991,
+//   job: 'teacher',
+//   friends: ['Michael', 'Peter', 'Steven'],
+//   hasDriversLicense: true,
+//   // calcAge: function() {
+//   //   return 2037 - this.birthYear;
+//   // }
+//   calcAge: function() {
+//     this.age = 2037 - this.birthYear;
+//     return this.age;
+//   },
+//   getSummary: function() {
+//     return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license.`;
+//   }
+// };
 
-console.log(jonas.calcAge());
-console.log(jonas.age);
-console.log(jonas.age);
-console.log(jonas.age);
+// console.log(jonas.calcAge());
+// console.log(jonas.age);
+// console.log(jonas.age);
+// console.log(jonas.age);
 
-// Chalenge
-// "Jonas is a 46-year old teacher, and he has a/no driver's license."
-console.log(jonas.getSummary());
+// // Chalenge
+// // "Jonas is a 46-year old teacher, and he has a/no driver's license."
+// console.log(jonas.getSummary());
 
 
 
@@ -378,38 +378,97 @@ TEST DATA: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.9
 GOOD LUCK 😀
 */
 
-const mark = {
-  firstName: 'Mark',
-  lastName: 'Miller',
-  getFullName: function() {
-    this.fullName = `${this.firstName} ${this.lastName}`;
-    return this.fullName;
-  },
-  mass: 78,
-  height: 1.69,
-  calcBMI: function() {
-    this.bmi = this.mass / (this.height * this.height);
-    return this.bmi;
-  } 
-};
+// const mark = {
+//   firstName: 'Mark',
+//   lastName: 'Miller',
+//   getFullName: function() {
+//     this.fullName = `${this.firstName} ${this.lastName}`;
+//     return this.fullName;
+//   },
+//   mass: 78,
+//   height: 1.69,
+//   calcBMI: function() {
+//     this.bmi = this.mass / (this.height * this.height);
+//     return this.bmi;
+//   } 
+// };
 
-const john = {
-  firstName: 'John',
-  lastName: 'Smith',
-  getFullName: function() {
-    this.fullName = `${this.firstName} ${this.lastName}`;
-    return this.fullName;
-  },
-  mass: 92,
-  height: 1.95,
-  calcBMI: function() {
-    this.bmi = this.mass / (this.height * this.height);
-    return this.bmi;
-  } 
-};
+// const john = {
+//   firstName: 'John',
+//   lastName: 'Smith',
+//   getFullName: function() {
+//     this.fullName = `${this.firstName} ${this.lastName}`;
+//     return this.fullName;
+//   },
+//   mass: 92,
+//   height: 1.95,
+//   calcBMI: function() {
+//     this.bmi = this.mass / (this.height * this.height);
+//     return this.bmi;
+//   } 
+// };
 
-mark.calcBMI();
-mark.getFullName();
-john.calcBMI();
-john.getFullName();
-console.log(`${mark.fullName}'s BMI (${mark.bmi}) is ${mark.bmi < john.bmi ? 'smaller' : 'higher'} than ${john.fullName}'s (${john.bmi})`);
+// mark.calcBMI();
+// mark.getFullName();
+// john.calcBMI();
+// john.getFullName();
+// console.log(`${mark.fullName}'s BMI (${mark.bmi}) is ${mark.bmi < john.bmi ? 'smaller' : 'higher'} than ${john.fullName}'s (${john.bmi})`);
+
+
+
+////////////////////////////////////
+// Iteration: The for loop
+console.log('Lifting weights repetition 1');
+
+// for loop keeps running while condition is TRUE
+for(let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep}`);
+}
+
+
+
+////////////////////////////////////
+// Looping Arrays, Breaking and Continuing
+// Introduction to Objects
+const jonas = [
+  'Jonas',
+  'Schmedmann',
+  2037 - 1991,
+  'teacher',
+  ['Michael', 'Peter', 'Steven'],
+  true
+];
+
+const types = [];
+
+for (let i = 0; i < jonas.length; i++) {
+  console.log(jonas[i], typeof jonas[i]);
+
+  //types[i] = typeof jonas[i];
+  types.push(typeof jonas[i]);
+}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2037 - years[i]);
+}
+
+console.log(ages);
+
+
+// continue and break
+console.log('--- ONLY STRINGS ---')
+for (let i = 0; i < jonas.length; i++) {
+  if(typeof jonas[i] !== 'string') continue;
+  console.log(jonas[i], typeof jonas[i]);
+}
+
+console.log('--- BREAK WITH NUMBER ---')
+for (let i = 0; i < jonas.length; i++) {
+  if(typeof jonas[i] === 'number') break;
+  console.log(jonas[i], typeof jonas[i]);
+}
